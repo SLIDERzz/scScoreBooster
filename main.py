@@ -93,14 +93,14 @@ def sendSnap(count: int, interval: float, delay: float, positions: dict[str, lis
         updateTitle(remaining)
 
         for stage, coords in positions.items():
-            print(Fore.YELLOW + "[DEBUG]: " + Fore.LIGHTRED_EX + f"Stage: {stage}, Coords: {coords}")  # DEBUG
+            print(Fore.YELLOW + "[DEBUG]: " + Fore.LIGHTRED_EX + f"Stage: {stage}, " + Fore.LIGHTWHITE_EX + f"Coords: {coords}")
             pyautogui.click(x=coords[0], y=coords[1])
             time.sleep(delay)
 
             if stage == "usernameInputField":
+                print(Fore.YELLOW + "[DEBUG]: " + Fore.LIGHTRED_EX + "Entered Name: " +  Fore.LIGHTWHITE_EX + user)
                 pyautogui.write(user)
-                print(Fore.YELLOW + "[DEBUG]: " + Fore.LIGHTRED_EX + "Entered Username: " +  Fore.LIGHTWHITE_EX + user)
-                time.sleep(2)
+                time.sleep(.5) # Väntar så den hinner skriva.
 
     print(" " * 50, end="\r")
 
@@ -125,17 +125,15 @@ def main():
 
     count = styled_input("Snaps you wanna send (Default: 10): ")
     interval = styled_input("Interval between snaps (Default: 2): ")
-    delay = styled_input("Delay between buttonClick (Default: 1): ")
-    user: str = ""
-    while not user:
-        user = input(f"Username: ")
+    delay = styled_input("Delay between buttonClick (Default: .5): ")
+    user = styled_input("Enter Name: ")
                      
     main_process = threading.Thread(
         target=sendSnap,
         args=(
             int(count) if count else 10,
             float(interval) if interval else 2,
-            float(delay) if delay else 1,
+            float(delay) if delay else .5,
             stage_positions,
             user,
             False
