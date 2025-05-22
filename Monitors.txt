@@ -1,0 +1,10 @@
+#1 MONITOR
+{"takePhoto": [1003, 875], "sendToButton": [1100, 925], "usernameInputField": [940, 210], "firstResult": [1000, 305], "sendButton": [1125, 930]}
+#2 MONITOR
+{"takePhoto": [2925, 875], "sendToButton": [3015, 925], "usernameInputField": [2850, 210], "firstResult": [2850, 275], "sendButton": [3050, 930]}
+
+														UTAN USERNAME (JAG)
+#1 MONITOR
+{"takePhoto": [1003, 875], "sendToButton": [1100, 925], "firstResult": [1000, 405], "sendButton": [1125, 930]}
+#2 MONITOR
+{"takePhoto": [2925, 875], "sendToButton": [3015, 925], "firstResult": [2925, 405], "sendButton": [2900, 930]}
