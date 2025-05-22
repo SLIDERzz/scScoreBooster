@@ -85,7 +85,6 @@ def sendSnap(count: int, interval: float, delay: float, positions: dict[str, lis
         if i:
             system("cls||clear") # Rensar efter varje runda
             print(Fore.MAGENTA + titleText)
-            print(Fore.YELLOW + "Snaps sent: " + Fore.LIGHTYELLOW_EX + f"{i + 1}", end="\r")
             time.sleep(interval)
 
         sentSnaps += 1
